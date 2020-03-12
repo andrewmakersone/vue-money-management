@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import auth from './auth'
+import auth from './auth.module'
+import info from './info.module'
 
 Vue.use(Vuex);
 
@@ -20,8 +21,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async fetchCurrency() {
+      // const key = process.env.VUE_APP_API_KEY;
+      const res = await fetch(`https://api.ratesapi.io/api/latest?base=RUB&symbols=RUB,USD,EUR`);
+      return await res.json()
+    }
   },
   modules: {
-    auth
+    auth,
+    info
   }
 })
