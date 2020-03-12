@@ -1,21 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    meta: {
-      layout: 'main'
-    },
-    component: Home
-  },
-  {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     meta: {
       layout: 'empty'
     },
@@ -23,31 +14,39 @@ const routes = [
   },
   {
     path: '/register',
-    name: 'Register',
+    name: 'register',
     meta: {
       layout: 'empty'
     },
     component: () => import('../views/Register')
   },
   {
+    path: '/',
+    name: 'home',
+    meta: {
+      layout: 'main'
+    },
+    component: () => import('../views/Home')
+  },
+  {
     path: '/categories',
-    name: 'Categories',
+    name: 'categories',
     meta: {
       layout: 'main'
     },
     component: () => import('../views/Categories')
   },
   {
-    path: '/detail-record',
-    name: 'DetailRecord',
+    path: '/detail',
+    name: 'detail',
     meta: {
       layout: 'main'
     },
-    component: () => import('../views/DetailRecord')
+    component: () => import('../views/Detail')
   },
   {
     path: '/history',
-    name: 'History',
+    name: 'history',
     meta: {
       layout: 'main'
     },
@@ -55,7 +54,7 @@ const routes = [
   },
   {
     path: '/planning',
-    name: 'Planning',
+    name: 'planning',
     meta: {
       layout: 'main'
     },
@@ -63,7 +62,7 @@ const routes = [
   },
   {
     path: '/profile',
-    name: 'Profile',
+    name: 'profile',
     meta: {
       layout: 'main'
     },
@@ -71,7 +70,7 @@ const routes = [
   },
   {
     path: '/record',
-    name: 'Record',
+    name: 'record',
     meta: {
       layout: 'main'
     },
