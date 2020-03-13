@@ -1,7 +1,7 @@
 export default {
   // eslint-disable-next-line no-unused-vars
   install(Vue, options) {
-    Vue.prototype.$message = function (html) {
+    Vue.prototype.$quickmessage = function (html) {
       // eslint-disable-next-line no-undef
       M.toast({html})
     };

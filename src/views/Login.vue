@@ -101,7 +101,7 @@
     },
     mounted() {
       if (messages[this.$route.query.message]) {
-        this.$message(messages[this.$route.query.message])
+        this.$quickmessage(messages[this.$route.query.message])
       }
     }
   }

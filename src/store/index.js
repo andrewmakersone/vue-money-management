@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import auth from './auth.module'
 import info from './info.module'
+import category from './category.module'
+import record from './record.module'
 
 Vue.use(Vuex);
 
@@ -22,13 +24,16 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchCurrency() {
-      // const key = process.env.VUE_APP_API_KEY;
-      const res = await fetch(`https://api.ratesapi.io/api/latest?base=RUB&symbols=RUB,USD,EUR`);
+      const key = process.env.VUE_APP_API_KEY;
+      const res = await fetch(`http://data.fixer.io/api/latest?access_key=${key}&symbols=RUB,USD,EUR`);
+
       return await res.json()
     }
   },
   modules: {
     auth,
-    info
+    info,
+    category,
+    record
   }
 })

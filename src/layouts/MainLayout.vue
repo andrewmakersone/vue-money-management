@@ -40,7 +40,6 @@
       if (!Object.keys(this.$store.getters.info).length) {
         await this.$store.dispatch('fetchInfo')
       }
-
       this.loading = false
     },
     components: {
